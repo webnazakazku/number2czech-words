@@ -48,9 +48,7 @@ class CzechNumber2Words
 			80					=> 'osmdesát',
 			90					=> 'devadesát',
 			100					=> 'sto',
-			'x00'				=> 'sta',
 			1000				=> 'tisíc',
-			'x000'				=> 'tisíce',
 		);
 
 		if (!is_numeric($number)) {
@@ -107,8 +105,10 @@ class CzechNumber2Words
 				}else{
 					$dict = $dictionary[$hundreds];
 				}
-				if($hundreds > 1) {
-					$string = $dict . $dictionary['x00'];
+				if($hundreds > 1 && $hundreds < 5) {
+					$string = $dict . "sta";
+				} elseif($hundreds > 4) {
+					$string = $dict . "set";
 				} else {
 					$string = $dict . $dictionary['100'];
 				}
@@ -122,7 +122,6 @@ class CzechNumber2Words
 				$remainder = $number % $baseUnit;
 				// CZ declination
 				$append = $dictionary[$baseUnit];
-				$exception = [1,5,6,7,8,9];
 				if($baseUnit > 1000){
 					$bigNumSep = ' ';
 					// neskloňujeme tisice, jen milion a vyssí
