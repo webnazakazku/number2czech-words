@@ -13,7 +13,7 @@ Usage
 
 ```
 <?php
-use Webnazakazku\CzechNumber2Words;
+use Webnazakazku\Utils\CzechNumber2Words;
 ...
 CzechNumber2Words::number2Words(123);
 ...
