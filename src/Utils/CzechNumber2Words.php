@@ -21,7 +21,7 @@ class CzechNumber2Words
 		$dictionary  = array(
 			0					=> 'nula',
 			1					=> 'jedna', // jeden milion, jedna miliarda
-			2					=> 'dva', // dvojtvar dve, dve - napr. 22000 - dvadsatDVA tisic, 200 = DVE sto
+			2					=> 'dva', // dvojtvar dve, dve - např. 22000 - dvacetDVA tisíc, 200 = DVE stě
 			3					=> 'tři',
 			4					=> 'čtyři',
 			5					=> 'pět',
@@ -65,9 +65,8 @@ class CzechNumber2Words
 				$dict = $dictionary[$number];
 				if($units){
 					if($number == 1){
-						// ludia chcu "jednosto"
-						$dict = ''; // nie jedentisic, jedensto
-						if($level <= 1){ // first loop = 0, pridame "jedno"sto na zaciatku slova
+						$dict = ''; // ne jedentisic, jednosto
+						if($level <= 1){ // first loop = 0, přidáme "jedno"sto na začátku slova
 							if($units == 100){
 								$dict = 'jedno'; // jednosto
 							}elseif(in_array($units, [1e3, 1e6])){
@@ -92,10 +91,9 @@ class CzechNumber2Words
 				$hundreds  = floor($number / 100);
 				$remainder = $number % 100;
 				if($hundreds == 1){
-					// ludi chtějí "jednosto"
-					$dict = ''; // ne čtyřitisic jednostoosmdesat, jedenstopatnáct
+					$dict = ''; // ne čtyřitisic jednostoosmdesát, jedenstopatnáct
 					if(!$level){ // jednosto na začátku slova
-						$dict = $dictionary[$hundreds]; // nie čtyřitisic jedenstoomdesát, jednostopatnást
+						$dict = $dictionary[$hundreds]; // ne čtyřitisic jedenstoomdesát, jednostopatnáct
 						if($number < 200){
 							$dict = 'jedno'; // jednostodvanact, ne jednosto
 						}
