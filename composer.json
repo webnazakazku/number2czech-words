@@ -1,0 +1,20 @@
+{
+    "name": "webnazakazku.cz/number2czech-words",
+    "description": "Util to convert number to Czech words for Nette Framework",
+    "type": "library",
+    "require": {
+        "nette/application": "^2.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Petr Parolek",
+            "email": "petr.parolek@webnazakazku.cz"
+        }
+    ],
+	"autoload": {
+		"psr-4": {
+			"Webnazakazku\\": "src/"
+		}
+	}
+}
