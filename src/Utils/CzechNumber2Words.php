@@ -20,7 +20,7 @@ class CzechNumber2Words
 		$separator   = '';
 		$dictionary  = array(
 			0					=> 'nula',
-			1					=> 'jeden', // jeden milion, jedna miliarda
+			1					=> 'jedna', // jeden milion, jedna miliarda
 			2					=> 'dva', // dvojtvar dve, dve - napr. 22000 - dvadsatDVA tisic, 200 = DVE sto
 			3					=> 'tři',
 			4					=> 'čtyři',
