@@ -25,7 +25,7 @@ class CzechNumber2Words
 			3					=> 'tři',
 			4					=> 'čtyři',
 			5					=> 'pět',
-			6					=> 'šesť',
+			6					=> 'šest',
 			7					=> 'sedm',
 			8					=> 'osm',
 			9					=> 'devět',
