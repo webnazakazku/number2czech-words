@@ -1,5 +1,5 @@
 {
-    "name": "webnazakazku.cz/number2czech-words",
+    "name": "webnazakazku/number2czech-words",
     "description": "Util to convert number to Czech words for Nette Framework",
     "type": "library",
     "require": {

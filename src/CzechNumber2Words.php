@@ -1,6 +1,6 @@
 <?php
 
-namespace Webnazakazku\Utils;
+namespace Webnazakazku;
 
 class CzechNumber2Words
 {
