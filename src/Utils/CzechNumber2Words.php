@@ -114,6 +114,33 @@ class CzechNumber2Words
 					$string .= self::number2words($remainder, null, $level);
 				}
 				break;
+			case $number < 10000:
+				$thousands  = floor($number / 1000);
+				$remainder = $number % 1000;
+				if($thousands == 1){
+					$dict = '';
+					if(!$level){
+						$dict = $dictionary[$thousands];
+						if($number < 2000){
+							$dict = 'jeden'; // jedentisicstodvanact
+						}
+					}
+				}elseif($thousands == 2){
+					$dict = 'dva';
+				}else{
+					$dict = $dictionary[$thousands];
+				}
+				if($thousands == 5) {
+					$string = $dict . "tisíc";
+				} elseif($thousands > 1) {
+					$string = $dict . "tisíce";
+				} else {
+					$string = $dict . $dictionary['1000'];
+				}
+				if ($remainder) {
+					$string .= self::number2words($remainder, null, $level);
+				}
+				break;
 			default:
 				$baseUnit = pow(1000, floor(log($number, 1000)));
 				$numBaseUnits = (int) ($number / $baseUnit);
