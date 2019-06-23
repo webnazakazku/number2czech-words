@@ -2,6 +2,8 @@
 
 namespace Webnazakazku\Utils;
 
+use InvalidArgumentException;
+
 class CzechNumber2Words
 {
 	
@@ -57,7 +59,7 @@ class CzechNumber2Words
 		
 		if ($number <= 0 || $number > 999999) {
 			// overflow
-			throw new \Nette\Application\ApplicationException('Invalid number range - value must be between 0 and 999 999');
+			throw new InvalidArgumentException('Invalid number range - value must be between 0 and 999 999');
 		}
 
 		switch (true) {

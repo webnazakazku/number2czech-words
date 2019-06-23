@@ -3,7 +3,7 @@
     "description": "Util to convert number to Czech words for Nette Framework",
     "type": "library",
     "require": {
-        "nette/application": "^2.4"
+        "php": ">= 5.6"
     },
     "license": "MIT",
     "authors": [
